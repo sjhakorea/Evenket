@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>evenket</title>
+<script src="http://platform.twitter.com/anywhere.js?id=lK3MqIdhb6kIEpwkHtXZ5g&v=1" type="text/javascript"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon"
+ href="http://evenket.com/images/favicon.ico" />
+</head>
+
+<body>
+<div id="outer">
+<div id="logo">
+<img src= "images/logo.png" />
+<img src="images/evenket_icon.png" />
+</div>
+
+<div>
+Testing out font colors.. <a href="http://twitter.com">Twitter</a>
+</div>
+
+</div>
+<span id="login-logout"></span>
+<script type="text/javascript">
+ 
+  jQuery(function () {
+ 
+    twttr.anywhere(function (T) {
+ 
+      if (T.isConnected()) {
+ 
+        $("#login-logout").append('<button id="signout" type="button">Sign out of Twitter</button>');
+ 
+        $("#signout").bind("click", function () {
+          twttr.anywhere.signOut();
+        });
+ 
+      }
+      else {
+        T("#login-logout").connectButton();
+      }
+ 
+    });
+ 
+  });
+ 
+</script>
+</body>
+
+</html>
